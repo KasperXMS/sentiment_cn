@@ -6,7 +6,7 @@ class ClassifierModel(nn.Module):
     def __init__(self,
                  dropout_prob=0.1):
         super(ClassifierModel, self).__init__()
-        self.bert_module = BertModel.from_pretrained('bert-base-chinese')
+        self.bert_module = BertModel.from_pretrained('hfl/chinese-roberta-wwm-ext')
 
         self.bert_config = self.bert_module.config
 

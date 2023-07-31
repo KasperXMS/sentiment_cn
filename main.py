@@ -13,7 +13,7 @@ import argparse
 import tqdm
 import numpy as np
 
-tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
+tokenizer = BertTokenizer.from_pretrained('hfl/chinese-roberta-wwm-ext')
 
 
 def train(tokenizer, model, args, train_data, test_data):
@@ -188,7 +188,7 @@ if __name__ == '__main__':
     valid_data = my_processor.get_examples(args.valid_file)
     test_data = my_processor.get_examples(args.test_file)
 
-    tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
+    tokenizer = BertTokenizer.from_pretrained('hfl/chinese-roberta-wwm-ext')
     model = ClassifierModel()
     if args.load_model != 'none':
         model.load_state_dict(torch.load(args.load_model))
